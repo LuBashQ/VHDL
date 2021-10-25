@@ -52,6 +52,7 @@ begin
         if n_Reset='1' then
             count <= 0;
             output_copy <= '0';
+            
         elsif sysclk'event and sysclk = '1' then
             if count >= max then
                 count <= 0;
@@ -60,7 +61,8 @@ begin
                 count <= count + 1;
                 output_copy <= output_copy;
             end if;
-        end if;
-        output_s <= output_copy; 
+            
+        end if;         
     end process;
+    output_s <= output_copy;
 end Behavioral;

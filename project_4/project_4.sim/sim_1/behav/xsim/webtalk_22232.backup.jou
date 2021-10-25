@@ -2,8 +2,8 @@
 # Webtalk v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Mon Oct 25 11:02:06 2021
-# Process ID: 16500
+# Start of session at: Mon Oct 25 10:55:47 2021
+# Process ID: 22232
 # Current directory: C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/clock_divider_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim/webtalk.log
