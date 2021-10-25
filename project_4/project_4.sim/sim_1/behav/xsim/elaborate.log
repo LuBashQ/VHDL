@@ -1,6 +1,6 @@
 Vivado Simulator v2021.1
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot clock_divider_tb_behav xil_defaultlib.clock_divider_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot button_pulser_tb_behav xil_defaultlib.button_pulser_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,6 +11,7 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.clock_divider [clock_divider_default]
-Compiling architecture behavioral of entity xil_defaultlib.clock_divider_tb
-Built simulation snapshot clock_divider_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=12500000...]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [button_pulser_default]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser_tb
+Built simulation snapshot button_pulser_tb_behav
