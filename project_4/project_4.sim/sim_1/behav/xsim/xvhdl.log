@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/sources/vhdl/clock_divider.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'clock_divider'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.srcs/sim_1/new/button_pulser_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'button_pulser_tb'
