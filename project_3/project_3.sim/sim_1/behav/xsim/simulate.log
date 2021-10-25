@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+ERROR: runtime range check value 26 is out of valid range 0 to 25
+Time: 1204 ns  Iteration: 0  Process: /integer_test/counter1
+  File: C:/Users/Veronica/VHDL/project_3/source/vhdl/integer_test.vhd
+
+HDL Line: C:/Users/Veronica/VHDL/project_3/source/vhdl/integer_test.vhd:23
