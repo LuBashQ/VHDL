@@ -21,12 +21,17 @@ architecture Behavioral of clock_divider_tb is
     signal sysclk: std_logic := '0';
     signal n_Reset: std_logic := '1';
     signal output_s: std_logic := '0';
+    signal enable: std_logic := '1';
 
     component clock_divider is
+        generic(
+            output_f:natural := 125e5
+        );
         port(
             sysclk : in std_logic;
             n_Reset: in std_logic;
-            output_s: inout std_logic
+            output_s: inout std_logic;
+            enable: in std_logic
         );
     end component clock_divider;
 
@@ -41,14 +46,18 @@ begin
         wait for(SYSCLK_PERIOD * 2);
         n_Reset <= not n_Reset;
         wait for(SYSCLK_PERIOD * 50);
+        enable <= '0';
+        wait for(SYSCLK_PERIOD * 50);
+        enable <= '1';
         wait;
     end process;
-    
+
     i_clocky: clock_divider
         port map(
             sysclk => sysclk,
             n_Reset => n_Reset,
-            output_s => output_s
+            output_s => output_s,
+            enable => enable
         );
-        
+
 end Behavioral;
