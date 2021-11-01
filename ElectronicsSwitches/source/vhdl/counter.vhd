@@ -30,7 +30,8 @@ entity counter is
         clk: in std_logic;
         n_Reset: in std_logic;
         out_s: out std_logic;
-        enable: in std_logic
+        enable: in std_logic;
+        count: out natural
     );
 end counter;
 
@@ -58,5 +59,6 @@ begin
     end process;
 
     out_s <= output;
+    count <= counter;
 
 end Behavioral;

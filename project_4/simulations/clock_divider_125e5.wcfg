@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,800.000 ns"></ZoomEndTime>
-      <Cursor1Time time="676.000 ns"></Cursor1Time>
+      <ZoomEndTime time="1,981.930 ns"></ZoomEndTime>
+      <Cursor1Time time="996.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="239"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <ValueColumnWidth column_width="124"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="19" />
    <wvobject type="divider" fp_name="divider94">
       <obj_property name="label">BUTTON PULSER</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -42,30 +42,6 @@
    <wvobject fp_name="/button_pulser_tb/i_pulsy/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_s" type="logic">
-      <obj_property name="ElementShortName">pushed_s</obj_property>
-      <obj_property name="ObjectShortName">pushed_s</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_s" type="logic">
-      <obj_property name="ElementShortName">repeat_s</obj_property>
-      <obj_property name="ObjectShortName">repeat_s</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_enable" type="logic">
-      <obj_property name="ElementShortName">pushed_delay_enable</obj_property>
-      <obj_property name="ObjectShortName">pushed_delay_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_enable" type="logic">
-      <obj_property name="ElementShortName">repeat_delay_enable</obj_property>
-      <obj_property name="ObjectShortName">repeat_delay_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pulse_rate" type="other">
-      <obj_property name="ElementShortName">pulse_rate</obj_property>
-      <obj_property name="ObjectShortName">pulse_rate</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay" type="other">
-      <obj_property name="ElementShortName">pushed_delay</obj_property>
-      <obj_property name="ObjectShortName">pushed_delay</obj_property>
    </wvobject>
    <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay" type="other">
       <obj_property name="ElementShortName">repeat_delay</obj_property>

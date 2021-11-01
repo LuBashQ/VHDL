@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Sun Oct 31 17:52:02 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Nov  1 15:42:16 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2021.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3247384" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "1591d302-f6bf-4744-8337-27a0dbb648d1" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "b2a81a7b435d44278b84530df75b51f7" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "214" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "227" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz" -context "user_environment"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "8.000 GB" -context "use
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "1800 ns" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "1200 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "1" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.12_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "7476_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 4115958222 -regid "" -xml C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "2.83_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "7464_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 3871316922 -regid "" -xml C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/button_pulser_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

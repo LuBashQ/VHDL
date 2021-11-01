@@ -26,8 +26,7 @@ library counter;
 
 entity button_pulser is
     generic (
-        pulse_rate: natural := 125e3; -- input clock frequency Hz
-        pushed_delay: natural := 4; -- clock cycles
+        long_press_delay: natural := 4; -- clock cycles
         repeat_delay: natural := 2 -- clock cycles
     );
     port (
@@ -40,171 +39,106 @@ end button_pulser;
 
 architecture Behavioral of button_pulser is
 
-    signal btn_output_s: std_logic:= '0';
+    signal btn_output_copy: std_logic:= '0';
 
-    type button_state is (IDLE, PUSHED, REPEAT, COOLDOWN);
+    type button_state is (IDLE, PRESSED, REPEATED);
     signal state: button_state := IDLE;
 
     component counter is
-    generic (
-        max: natural
-    );
-    port (
-        clk: in std_logic;
-        n_Reset: in std_logic;
-        out_s: out std_logic;
-        enable: in std_logic
-    );
+        generic (
+            max: natural
+        );
+        port (
+            clk: in std_logic;
+            n_Reset: in std_logic;
+            out_s: out std_logic;
+            enable: in std_logic;
+            count: out natural
+        );
     end component counter;
 
-    signal pushed_s: std_logic := '0';
-    signal repeat_s: std_logic := '0';
-    signal pushed_delay_enable: std_logic := '0';
-    signal repeat_delay_enable: std_logic := '0';
-    signal pushed_pc: std_logic := '0';
-    signal repeat_pc: std_logic := '0';
+    signal long_press: std_logic := '0';
+    signal repeat: std_logic := '0';
+    signal long_press_enable: std_logic := '0';
+    signal repeat_enable: std_logic := '0';
+    signal long_press_count: natural := 0;
+    signal repeat_count: natural := 0;
 
 begin
 
---pulse: process(clk, n_Reset) is
---begin
---    if n_Reset = '0' then
---        state <= IDLE;
---        btn_output_s <= '0';
---        pushed_delay_enable <= '0';
---        repeat_delay_enable <= '0';
---    elsif rising_edge(clk) then
---        case state is
---            when IDLE =>
---                if btn_in_s = '1' then
---                    state <= PUSHED;
---                    btn_output_s <= '1'; -- button has been pushed
---                    pushed_delay_enable <= '1'; -- starts pushed delay counter
---                else
---                    pushed_delay_enable <= '0';
---                    repeat_delay_enable <= '0';
---                    btn_output_s <= '0';
---                end if;
---            when PUSHED =>
---                btn_output_s <= '0';
---                if btn_in_s = '1' and pushed_s = '1' then
---                    btn_output_s <= '1';
---                    state <= REPEAT; -- delay done
---                    pushed_delay_enable <= '0';
---                    repeat_delay_enable <= '1';
---                elsif btn_in_s <= '0' then  
---                    state <= IDLE;
---                    pushed_delay_enable <= '0';
---                end if;
---            when REPEAT =>
---               btn_output_s <= '0';
---                if btn_in_s = '1' and repeat_s = '1' then
---                    btn_output_s <= '1';
---                elsif btn_in_s <= '0' then  
---                    state <= IDLE;
---                    repeat_delay_enable <= '0';
---                end if;
---            when others =>
---                state <= IDLE;
---        end case;
---    end if;
---end process pulse;
-
-set_state: process(clk, n_Reset)
-begin
-    if n_Reset = '0' then 
-        state <= IDLE;
-        pushed_delay_enable <= '0';
-        repeat_delay_enable <= '0';
-    elsif rising_edge(clk) then
-        case state is
-            when IDLE =>
-                if btn_in_s = '1' then
-                    state <= PUSHED;
-                    pushed_delay_enable <= '1';
-                else
-                    pushed_delay_enable <= '0';
-                    repeat_delay_enable <= '0';
-                end if;
-            when PUSHED =>
-                if btn_in_s <= '1' and pushed_s = '1' then
-                    state <= COOLDOWN;
-                    pushed_delay_enable <= '0';
-                    repeat_delay_enable <= '1';
-                elsif btn_in_s <= '0' then
-                    state <= IDLE;
-                    pushed_delay_enable <= '0';  
-                end if;
-            when REPEAT =>
-                if btn_in_s = '1' then
-                    state <= COOLDOWN;
-                    repeat_delay_enable <= '1';
-                elsif btn_in_s <= '0' then
-                    state <= IDLE;
-                    repeat_delay_enable <= '0';  
-                end if;
-            when COOLDOWN =>
-                if btn_in_s = '1' and repeat_s = '1' then
-                    repeat_delay_enable <= '0';
-                    state <= REPEAT;
-                elsif btn_in_s <= '0' then
-                    state <= IDLE;
-                    repeat_delay_enable <= '0';  
-                end if; 
-         end case;
-    end if;
-end process set_state;
-
-set_output: process(state, pushed_s, repeat_s, btn_in_s)
-begin
-    case state is
-    when IDLE =>
-        if btn_in_s = '1' then
-            btn_output_s <= '1';
-        else
-            btn_output_s <= '0';
+    set_state: process(clk, n_Reset) is
+    begin
+        if n_Reset = '0' then
+            state <= IDLE;
+            long_press_enable <= '0';
+            repeat_enable <= '0';
+        elsif rising_edge(clk) then
+            if btn_in_s = '1' then
+                case state is
+                    when IDLE =>
+                        state <= PRESSED;
+                        long_press_enable <= '1';
+                    when PRESSED =>
+                        if long_press_count = long_press_delay - 2 then -- we have to anticipate the delay by 1 :(
+                            repeat_enable <= '1';
+                        elsif long_press = '1' then
+                            long_press_enable <= '0';
+                            state <= REPEATED;
+                        end if;
+                    when REPEATED =>
+                    when others =>
+                        state <= IDLE;
+                end case;
+            else
+                state <= IDLE;
+                long_press_enable <= '0';
+                repeat_enable <= '0';
+            end if;
         end if;
-    when PUSHED =>
-        if btn_in_s = '1' and rising_edge(pushed_s) then
-            btn_output_s <= '1';
-        else
-            btn_output_s <= '0';
+    end process set_state;
+
+    set_output: process(clk, n_Reset) is
+    begin
+        if n_Reset = '0' then
+            btn_output_copy  <= '0';
+        elsif rising_edge(clk) then
+            case state is
+                when IDLE =>
+                    btn_output_copy <= btn_in_s;
+                when PRESSED =>
+                    btn_output_copy <= btn_in_s and long_press;
+                when REPEATED =>
+                    btn_output_copy <= btn_in_s and repeat;
+                when others =>
+                    btn_output_copy <= '0';
+            end case;
         end if;
-    when REPEAT =>
-        if btn_in_s = '1' then
-            btn_output_s <= '1';
-        else
-            btn_output_s <= '0';
-        end if;
-    when COOLDOWN =>
-        btn_output_s <= '0';
-    when others => btn_output_s <= '0';
-    end case;
-end process set_output;
+    end process set_output;
 
+    pushed_delay_counter: counter
+        generic map(
+            max => long_press_delay - 1
+        )
+        port map(
+            clk => clk,
+            n_Reset => n_Reset,
+            out_s => long_press ,
+            enable => long_press_enable,
+            count => long_press_count
+        );
 
-pushed_delay_counter: counter
-    generic map(
-        max => pushed_delay
-    )
-    port map(
-        clk => clk,
-        n_Reset => n_Reset,
-        out_s => pushed_s,
-        enable => pushed_delay_enable
-    );
+    repeat_delay_counter: counter
+        generic map(
+            max => repeat_delay
+        )
+        port map(
+            clk => clk,
+            n_Reset => n_Reset,
+            out_s => repeat,
+            enable => repeat_enable,
+            count => repeat_count
+        );
 
-repeat_delay_counter: counter
-    generic map(
-        max => repeat_delay
-    )
-    port map(
-        clk => clk,
-        n_Reset => n_Reset,
-        out_s => repeat_s,
-        enable => repeat_delay_enable
-    );
-
-    btn_out_s <= btn_output_s;
+    btn_out_s <= btn_output_copy;
 
 end Behavioral;

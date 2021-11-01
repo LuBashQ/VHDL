@@ -61,9 +61,6 @@ architecture Behavioral of button_pulser_tb is
     end component clock_divider;
 
     component button_pulser is
-        generic (
-            pulse_rate:natural := 125e3
-        );
         port (
             btn_in_s: in std_logic;
             clk: in std_logic;
