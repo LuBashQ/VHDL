@@ -3,96 +3,160 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="button_pulser_tb_behav.wdb" id="1">
+      <db_ref path="rgb_selector_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="button_pulser_tb" />
+            <top_module name="rgb_selector_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,981.930 ns"></ZoomEndTime>
-      <Cursor1Time time="996.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="2,304.001000001 ms"></ZoomEndTime>
+      <Cursor1Time time="2,304.001000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="239"></NameColumnWidth>
-      <ValueColumnWidth column_width="124"></ValueColumnWidth>
+      <NameColumnWidth column_width="89"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
-   <wvobject type="divider" fp_name="divider94">
-      <obj_property name="label">BUTTON PULSER</obj_property>
+   <WVObjectSize size="35" />
+   <wvobject type="divider" fp_name="divider78">
+      <obj_property name="label">CLOCK</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/btn_in_s" type="logic">
-      <obj_property name="ElementShortName">btn_in_s</obj_property>
-      <obj_property name="ObjectShortName">btn_in_s</obj_property>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/n_Reset" type="logic">
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/n_Reset" type="logic">
       <obj_property name="ElementShortName">n_Reset</obj_property>
       <obj_property name="ObjectShortName">n_Reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/btn_out_s" type="logic">
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/output_s" type="logic">
+      <obj_property name="ElementShortName">output_s</obj_property>
+      <obj_property name="ObjectShortName">output_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/count" type="other">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/max" type="other">
+      <obj_property name="ElementShortName">max</obj_property>
+      <obj_property name="ObjectShortName">max</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/output_copy" type="logic">
+      <obj_property name="ElementShortName">output_copy</obj_property>
+      <obj_property name="ObjectShortName">output_copy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/input_f" type="other">
+      <obj_property name="ElementShortName">input_f</obj_property>
+      <obj_property name="ObjectShortName">input_f</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/i_clocky/output_f" type="other">
+      <obj_property name="ElementShortName">output_f</obj_property>
+      <obj_property name="ObjectShortName">output_f</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider87">
+      <obj_property name="label">RGB SELECTOR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/selector" type="logic">
+      <obj_property name="ElementShortName">selector</obj_property>
+      <obj_property name="ObjectShortName">selector</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/n_Reset" type="logic">
+      <obj_property name="ElementShortName">n_Reset</obj_property>
+      <obj_property name="ObjectShortName">n_Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/colour_value" type="array">
+      <obj_property name="ElementShortName">colour_value[2:0]</obj_property>
+      <obj_property name="ObjectShortName">colour_value[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_out" type="logic">
+      <obj_property name="ElementShortName">button_pulser_out</obj_property>
+      <obj_property name="ObjectShortName">button_pulser_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/colour" type="other">
+      <obj_property name="ElementShortName">colour</obj_property>
+      <obj_property name="ObjectShortName">colour</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/colour_value_copy" type="array">
+      <obj_property name="ElementShortName">colour_value_copy[2:0]</obj_property>
+      <obj_property name="ObjectShortName">colour_value_copy[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/operating_f" type="other">
+      <obj_property name="ElementShortName">operating_f</obj_property>
+      <obj_property name="ObjectShortName">operating_f</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/long_delay" type="other">
+      <obj_property name="ElementShortName">long_delay</obj_property>
+      <obj_property name="ObjectShortName">long_delay</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/short_delay" type="other">
+      <obj_property name="ElementShortName">short_delay</obj_property>
+      <obj_property name="ObjectShortName">short_delay</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider121">
+      <obj_property name="label">PULSER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s" type="logic">
+      <obj_property name="ElementShortName">btn_in_s</obj_property>
+      <obj_property name="ObjectShortName">btn_in_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset" type="logic">
+      <obj_property name="ElementShortName">n_Reset</obj_property>
+      <obj_property name="ObjectShortName">n_Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s" type="logic">
       <obj_property name="ElementShortName">btn_out_s</obj_property>
       <obj_property name="ObjectShortName">btn_out_s</obj_property>
    </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/state" type="other">
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_output_copy" type="logic">
+      <obj_property name="ElementShortName">btn_output_copy</obj_property>
+      <obj_property name="ObjectShortName">btn_output_copy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
    </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay" type="other">
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press" type="logic">
+      <obj_property name="ElementShortName">long_press</obj_property>
+      <obj_property name="ObjectShortName">long_press</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat" type="logic">
+      <obj_property name="ElementShortName">repeat</obj_property>
+      <obj_property name="ObjectShortName">repeat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable" type="logic">
+      <obj_property name="ElementShortName">long_press_enable</obj_property>
+      <obj_property name="ObjectShortName">long_press_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable" type="logic">
+      <obj_property name="ElementShortName">repeat_enable</obj_property>
+      <obj_property name="ObjectShortName">repeat_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count" type="other">
+      <obj_property name="ElementShortName">long_press_count</obj_property>
+      <obj_property name="ObjectShortName">long_press_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count" type="other">
+      <obj_property name="ElementShortName">repeat_count</obj_property>
+      <obj_property name="ObjectShortName">repeat_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay" type="other">
+      <obj_property name="ElementShortName">long_press_delay</obj_property>
+      <obj_property name="ObjectShortName">long_press_delay</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay" type="other">
       <obj_property name="ElementShortName">repeat_delay</obj_property>
       <obj_property name="ObjectShortName">repeat_delay</obj_property>
-   </wvobject>
-   <wvobject type="divider" fp_name="divider163">
-      <obj_property name="label">PUSHED</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_counter/out_s" type="logic">
-      <obj_property name="ElementShortName">out_s</obj_property>
-      <obj_property name="ObjectShortName">out_s</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_counter/enable" type="logic">
-      <obj_property name="ElementShortName">enable</obj_property>
-      <obj_property name="ObjectShortName">enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_counter/counter" type="other">
-      <obj_property name="ElementShortName">counter</obj_property>
-      <obj_property name="ObjectShortName">counter</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_counter/output" type="logic">
-      <obj_property name="ElementShortName">output</obj_property>
-      <obj_property name="ObjectShortName">output</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/pushed_delay_counter/max" type="other">
-      <obj_property name="ElementShortName">max</obj_property>
-      <obj_property name="ObjectShortName">max</obj_property>
-   </wvobject>
-   <wvobject type="divider" fp_name="divider379">
-      <obj_property name="label">REPEAT</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_counter/out_s" type="logic">
-      <obj_property name="ElementShortName">out_s</obj_property>
-      <obj_property name="ObjectShortName">out_s</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_counter/enable" type="logic">
-      <obj_property name="ElementShortName">enable</obj_property>
-      <obj_property name="ObjectShortName">enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_counter/counter" type="other">
-      <obj_property name="ElementShortName">counter</obj_property>
-      <obj_property name="ObjectShortName">counter</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_counter/output" type="logic">
-      <obj_property name="ElementShortName">output</obj_property>
-      <obj_property name="ObjectShortName">output</obj_property>
-   </wvobject>
-   <wvobject fp_name="/button_pulser_tb/i_pulsy/repeat_delay_counter/max" type="other">
-      <obj_property name="ElementShortName">max</obj_property>
-      <obj_property name="ObjectShortName">max</obj_property>
    </wvobject>
 </wave_config>

@@ -23,7 +23,7 @@ entity rgb_selector is
         clk: in std_logic;
         selector: in std_logic;
         n_Reset: in std_logic;
-        colour_value: out std_logic_vector(3 downto 0)
+        colour_value: out std_logic_vector(2 downto 0)
     );
 end rgb_selector;
 
@@ -43,13 +43,12 @@ architecture Behavioral of rgb_selector is
     end component button_pulser;
 
     -- button pulser signals --
-    signal button_in: std_logic := '0';
     signal button_pulser_out: std_logic := '0';
     
     -- rgb selector signals
     type selector_colour is (RED, GREEN, BLUE);
     signal colour: selector_colour := RED;
-    signal colour_value_copy: std_logic_vector(3 downto 0) := "000";
+    signal colour_value_copy: std_logic_vector(2 downto 0) := "000";
 
 begin
 
@@ -59,7 +58,7 @@ begin
             repeat_delay => natural(operating_f * short_delay)
         )
         port map(
-            btn_in_s => button_in,
+            btn_in_s => selector,
             btn_out_s => button_pulser_out,
             n_Reset => n_Reset,
             clk => clk
@@ -69,23 +68,25 @@ begin
     begin
         if n_Reset = '0' then
             colour <= RED;
-            colour_value <= "100";
-        elsif rising_edge(clk) then
+            colour_value_copy <= "100";
+        elsif rising_edge(clk) and button_pulser_out = '1' then
             case colour is
                 when RED =>
                     colour <= GREEN;
-                    colour_value <= "010";
+                    colour_value_copy <= "010";
                 when GREEN =>
                     colour <= BLUE;
-                    colour_value <= "001";
+                    colour_value_copy <= "001";
                 when BLUE =>
                     colour <= RED;
-                    colour_value <= "100";
+                    colour_value_copy <= "100";
                 when others =>
                     colour <= RED;
-                    colour_value <= "100";
+                    colour_value_copy <= "100";
             end case;
         end if;
     end process set_colour;
+    
+    colour_value <= colour_value_copy;
 
 end Behavioral;
