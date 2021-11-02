@@ -25,7 +25,7 @@ architecture Behavioral of clock_divider_tb is
 
     component clock_divider is
         generic(
-            output_f:natural := 125e5
+            output_f: real := 125.0e5
         );
         port(
             sysclk : in std_logic;
