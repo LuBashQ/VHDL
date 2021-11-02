@@ -6,12 +6,13 @@ entity rgb_selector_tb is
 end rgb_selector_tb;
 
 architecture Behavioral of rgb_selector_tb  is
-
+    
+    constant SPEEDUP: natural := 1000;
     constant SYSCLK_PERIOD: time := 8ns;
-    constant CLOCK_PERIOD: time := 1ms;
+    constant CLOCK_PERIOD: time := 1ms / SPEEDUP;
     -- clock divider
-    signal sysclk: std_logic := '0';
-    signal n_Reset: std_logic := '1';
+    signal sysclk: std_logic := '1';
+    signal n_Reset: std_logic := '0';
     signal output_s: std_logic := '0';
     -- rgb_selector
     signal btn_in_s: std_logic := '0';
@@ -30,9 +31,9 @@ architecture Behavioral of rgb_selector_tb  is
 
     component rgb_selector is
         generic (
-            operating_f: real := 1.0e3; -- Hz
-            long_delay: real := 1.0; -- seconds
-            short_delay: real := 0.5 -- seconds
+            operating_f: real := 1.0e3 * SPEEDUP;
+            long_delay: real := 2.0 / SPEEDUP;
+            short_delay: real := 0.5 / SPEEDUP
         );
         port (
             clk: in std_logic;
@@ -48,18 +49,25 @@ begin
 
     process
     begin
-        btn_in_s <= '1';
-        wait for(CLOCK_PERIOD * 3000);
+        n_Reset <= '0';
         btn_in_s <= '0';
         wait for(CLOCK_PERIOD * 1000);
         btn_in_s <= '1';
+        n_Reset <= '1';
+        wait for(CLOCK_PERIOD * 500);
+        btn_in_s <= '0';
+        wait for(CLOCK_PERIOD * 1000);
+        btn_in_s <= '1';
+        n_Reset <= '0';
+        wait for(CLOCK_PERIOD * 500);
+        n_Reset <= '1';
         wait;
     end process;
 
 
-    i_clocky: clock_divider
+    clock_divider_UT: clock_divider
         generic map(
-            output_f => 1.0e3
+            output_f => 1.0e3 * SPEEDUP
         )
         port map(
             sysclk => sysclk,
