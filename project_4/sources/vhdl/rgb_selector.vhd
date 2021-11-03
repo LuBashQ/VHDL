@@ -66,7 +66,7 @@ begin
 
     set_colour: process(clk, n_Reset) is
     begin
-        if n_Reset = '0' then
+        if n_Reset = '0' or selector = '0' then
             colour <= RED;
             colour_value_copy <= "100";
         elsif rising_edge(clk) and button_pulser_out = '1' then

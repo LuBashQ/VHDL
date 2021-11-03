@@ -61,6 +61,10 @@ begin
         n_Reset <= '0';
         wait for(CLOCK_PERIOD * 500);
         n_Reset <= '1';
+        wait for(CLOCK_PERIOD * 1000);
+        btn_in_s <= '0';
+        wait for(CLOCK_PERIOD * 300);
+        btn_in_s <= '1';
         wait;
     end process;
 
