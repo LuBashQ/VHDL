@@ -12,8 +12,8 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package ieee.math_real
-Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=10000.0)...]
 Compiling architecture behavioral of entity xil_defaultlib.counter [counter_default]
-Compiling architecture behavioral of entity xil_defaultlib.top [\top(output_f=1000000.0)\]
+Compiling architecture behavioral of entity xil_defaultlib.top [\top(output_f=10000.0)\]
 Compiling architecture behavioral of entity xil_defaultlib.top_tb
 Built simulation snapshot top_tb_behav

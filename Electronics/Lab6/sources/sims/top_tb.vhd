@@ -12,6 +12,7 @@ architecture Behavioral of top_tb is
 
     component top is
         generic (
+            max_value: natural range 0 to 15;
             input_f: real;
             output_f: real
         );
@@ -25,8 +26,9 @@ begin
 
     top_DUT: top
         generic map (
+            max_value => 15,
             input_f => 125.0e6,
-            output_f => 1.0e6
+            output_f => 10.0e3
         )
         port map(
             sysclk => sysclk,

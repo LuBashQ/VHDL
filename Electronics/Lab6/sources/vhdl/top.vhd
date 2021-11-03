@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top is
     generic (
+        max_value: natural range 0 to 15 := 15;
         input_f: real := 125.0e6;
         output_f: real := 125.0e6
     );
@@ -27,7 +28,7 @@ architecture Behavioral of top is
 
     component counter is
         generic (
-            max: natural range 0 to 256 -- max 8 bits because Pmod ports have only 8 outputs
+            max: natural range 0 to 15
         );
         port (
             clk: in std_logic;
@@ -51,7 +52,7 @@ begin
 
     freq_divider: counter
         generic map(
-            max => 256
+            max => max_value
         )
         port map(
             clk => clk,

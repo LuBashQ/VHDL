@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity counter is
     generic (
-        max: natural range 0 to 256 := 256 -- max 8 bits because Pmod ports have only 8 outputs
+        max: natural range 0 to 15 := 15 -- max 8 bits because Pmod ports have only 8 outputs
     );
     port (
         clk: in std_logic;
@@ -15,14 +15,14 @@ end counter;
 
 architecture Behavioral of counter is
 
-    signal counter: natural := 0;
+    signal counter: natural range 0 to 15 := 0;
 
 begin
 
     process(clk) is
     begin
         if rising_edge(clk) then
-            if counter >= max - 1 then
+            if counter >= max then
                 counter <= 0;
             else
                 counter <= counter + 1;
