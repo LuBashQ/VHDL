@@ -1,7 +1,7 @@
-Running: xsim.dir/button_pulser_tb_behav/xsimk.exe -simmode gui -wdb button_pulser_tb_behav.wdb -simrunnum 0 -socket 1215
+Running: xsim.dir/button_pulser_tb_behav/xsimk.exe -simmode gui -wdb button_pulser_tb_behav.wdb -simrunnum 0 -socket 10949
 Design successfully loaded
-Design Loading Memory Usage: 6908 KB (Peak: 6908 KB)
+Design Loading Memory Usage: 6896 KB (Peak: 6896 KB)
 Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 7464 KB (Peak: 7464 KB)
-Simulation CPU Usage: 2812 ms
+Simulation Memory Usage: 7444 KB (Peak: 7444 KB)
+Simulation CPU Usage: 3280 ms

@@ -42,7 +42,6 @@ architecture Behavioral of button_pulser_tb is
     signal sysclk: std_logic := '0';
     signal n_Reset: std_logic := '1';
     signal output_s: std_logic := '0';
-    signal enable: std_logic := '1';
     -- button pulser
     signal btn_in_s: std_logic := '0';
     signal btn_out_s: std_logic := '0';
@@ -50,13 +49,12 @@ architecture Behavioral of button_pulser_tb is
 
     component clock_divider is
         generic(
-            output_f: natural := 125e3
+            output_f: real := 125.0e3
         );
         port(
             sysclk : in std_logic;
             n_Reset: in std_logic;
-            output_s: inout std_logic;
-            enable: in std_logic
+            output_s: inout std_logic
         );
     end component clock_divider;
 
@@ -87,13 +85,12 @@ begin
 
     i_clocky: clock_divider
         generic map(
-            output_f => 125e5
+            output_f => 125.0e5
         )
         port map(
             sysclk => sysclk,
             n_Reset => n_Reset,
-            output_s => output_s,
-            enable => enable
+            output_s => output_s
         );
 
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="5,001.000001 us"></ZoomEndTime>
+      <Cursor1Time time="0.036000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="347"></NameColumnWidth>
+      <ValueColumnWidth column_width="156"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/top_tb/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/SYSTEMCLOCK" type="other">
+      <obj_property name="ElementShortName">SYSTEMCLOCK</obj_property>
+      <obj_property name="ObjectShortName">SYSTEMCLOCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="group41" type="group">
+      <obj_property name="label">clock divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_tb/top_DUT/clock/sysclk" type="logic">
+         <obj_property name="ElementShortName">sysclk</obj_property>
+         <obj_property name="ObjectShortName">sysclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/output_s" type="logic">
+         <obj_property name="ElementShortName">output_s</obj_property>
+         <obj_property name="ObjectShortName">output_s</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/count" type="other">
+         <obj_property name="ElementShortName">count</obj_property>
+         <obj_property name="ObjectShortName">count</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/max" type="other">
+         <obj_property name="ElementShortName">max</obj_property>
+         <obj_property name="ObjectShortName">max</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/output_copy" type="logic">
+         <obj_property name="ElementShortName">output_copy</obj_property>
+         <obj_property name="ObjectShortName">output_copy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/input_f" type="other">
+         <obj_property name="ElementShortName">input_f</obj_property>
+         <obj_property name="ObjectShortName">input_f</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/clock/output_f" type="other">
+         <obj_property name="ElementShortName">output_f</obj_property>
+         <obj_property name="ObjectShortName">output_f</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group46" type="group">
+      <obj_property name="label">frequency divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_tb/top_DUT/freq_divider/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/freq_divider/out_s" type="array">
+         <obj_property name="ElementShortName">out_s[7:0]</obj_property>
+         <obj_property name="ObjectShortName">out_s[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/freq_divider/counter" type="other">
+         <obj_property name="ElementShortName">counter</obj_property>
+         <obj_property name="ObjectShortName">counter</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/top_DUT/freq_divider/max" type="other">
+         <obj_property name="ElementShortName">max</obj_property>
+         <obj_property name="ObjectShortName">max</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

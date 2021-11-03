@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/Electronics/Lab6/sources/vhdl/clock_divider.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_divider'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/Electronics/Lab6/sources/vhdl/counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/crist/OneDrive/Documenti/GitHub/VHDL/Electronics/Lab6/sources/vhdl/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
