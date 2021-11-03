@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../sources/vhdl/clock_divider.vhd" \
+"../../../../sources/vhdl/counter.vhd" \
+"../../../../sources/vhdl/top.vhd" \
+"../../../../sources/sims/top_tb.vhd" \
+
+# Do not sort compile order
+nosort
