@@ -20,3 +20,658 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/dat
 open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:10 . Memory (MB): peak = 1439.145 ; gain = 0.000
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd w ]
+add_files -fileset sim_1 C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd
+update_compile_order -fileset sim_1
+set_property top lab4_top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property top lab4_top_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/button_pulser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'button_pulser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/clock_divider.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_divider'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top'
+WARNING: [VRFC 10-3093] actual for formal port 'n_reset' is neither a static name nor a globally static expression [C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd:83]
+WARNING: [VRFC 10-3093] actual for formal port 'n_reset' is neither a static name nor a globally static expression [C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd:94]
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/rgb_selector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rgb_selector'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/lab4_top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim/xsim.dir/lab4_top_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Nov  8 10:56:40 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2021.1/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 86.316 ; gain = 4.598
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov  8 10:56:40 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 1439.145 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1439.145 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:28 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:34 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top_tb'
+WARNING: [VRFC 10-3093] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd:85]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 1439.145 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lab4_top'
+WARNING: [VRFC 10-3093] actual for formal port 'n_reset' is neither a static name nor a globally static expression [C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd:83]
+WARNING: [VRFC 10-3093] actual for formal port 'n_reset' is neither a static name nor a globally static expression [C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/lab4_top.vhd:94]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1439.145 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'lab4_top_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'lab4_top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj lab4_top_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Veronica/Desktop/vhdl/project_4/sources/vhdl/rgb_selector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rgb_selector'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+"xelab -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto b2a81a7b435d44278b84530df75b51f7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot lab4_top_tb_behav xil_defaultlib.lab4_top_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clock_divider [\clock_divider(output_f=1000000....]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=1999)\]
+Compiling architecture behavioral of entity xil_defaultlib.counter [\counter(max=500)\]
+Compiling architecture behavioral of entity xil_defaultlib.button_pulser [\button_pulser(long_press_delay=...]
+Compiling architecture behavioral of entity xil_defaultlib.rgb_selector [\rgb_selector(operating_f=100000...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top [\lab4_top(operating_f=1000000.0,...]
+Compiling architecture behavioral of entity xil_defaultlib.lab4_top_tb
+Built simulation snapshot lab4_top_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Veronica/Desktop/vhdl/project_4/project_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "lab4_top_tb_behav -key {Behavioral:sim_1:Functional:lab4_top_tb} -tclbatch {lab4_top_tb.tcl} -view {C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/selector was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[2] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[1] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour_value[0] was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/colour was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_out was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/operating_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/long_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/short_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_in_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/clk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/btn_out_s was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/state was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_enable was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/long_press_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/rgb_selector_UT/button_pulser_i/repeat_delay was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/sysclk was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/n_Reset was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/count was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/max was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/input_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_f was not found in the design.
+WARNING: Simulation object /rgb_selector_tb/clock_divider_UT/output_s was not found in the design.
+source lab4_top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1439.145 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'lab4_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1439.145 ; gain = 0.000
+run 100 ms
+run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1439.145 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  8 11:13:48 2021...

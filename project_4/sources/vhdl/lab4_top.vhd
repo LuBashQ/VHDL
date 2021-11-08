@@ -23,6 +23,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity lab4_top is
+    generic(
+        -- modify below for testing
+        operating_f: real := 1.0e3;
+        long_delay: real := 2.0;
+        short_delay: real := 0.5
+    );
     Port ( 
         sysclk: in std_logic;
         selector: in std_logic;
@@ -35,7 +41,7 @@ end lab4_top;
 
 architecture Behavioral of lab4_top is
 
-constant OUTPUT_FREQUENCY: real := 1.0e3;
+--constant OUTPUT_FREQUENCY: real := 1.0e3;
 
 component clock_divider is
     generic(
@@ -70,7 +76,7 @@ begin
 i_clock_divider: clock_divider 
     generic map(
         input_f => 125.0e6,
-        output_f => OUTPUT_FREQUENCY 
+        output_f => operating_f 
     )
     port map(
         sysclk => sysclk,
@@ -79,9 +85,9 @@ i_clock_divider: clock_divider
     );
 i_rgb_selector: rgb_selector 
     generic map(
-        operating_f => OUTPUT_FREQUENCY , -- Hz
-        long_delay => 2.0, -- seconds
-        short_delay => 0.5 -- seconds
+        operating_f => operating_f  , -- Hz
+        long_delay => long_delay , -- seconds
+        short_delay => short_delay  -- seconds
     )
     port map(
         clk => clock_output,
@@ -89,8 +95,8 @@ i_rgb_selector: rgb_selector
         selector => selector,
         colour_value => rgb_output
     );
-    led5_r <= rgb_output(0);
+    led5_r <= rgb_output(2);
     led5_g <= rgb_output(1);
-    led5_b <= rgb_output(2);
+    led5_b <= rgb_output(0);
 
 end Behavioral;

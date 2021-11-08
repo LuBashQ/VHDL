@@ -13,3 +13,53 @@ start_gui
 open_project C:/Users/Veronica/Desktop/vhdl/project_4/project_4.xpr
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd w ]
+add_files -fileset sim_1 C:/Users/Veronica/Desktop/vhdl/project_4/simulations/lab4_top_tb.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top lab4_top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top lab4_top_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+run 100 ms
+run 100 ms
+close_sim
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+run 100 ms
+run 100 ms
+run 100 ms
+close_sim
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+run 100 ms
+close_sim
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+run 100 ms
+close_sim
+launch_simulation
+open_wave_config C:/Users/Veronica/Desktop/vhdl/project_4/simulations/clock_divider_125e5.wcfg
+source lab4_top_tb.tcl
+run 100 ms
+close_sim
