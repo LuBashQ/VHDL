@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity counter is
     generic (
-        max: natural range 0 to 15 := 15 -- max 8 bits because Pmod ports have only 8 outputs
+        max: natural range 0 to 15 := 15
     );
     port (
         clk: in std_logic;
