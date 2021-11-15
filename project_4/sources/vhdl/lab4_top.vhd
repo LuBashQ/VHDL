@@ -70,7 +70,7 @@ component clock_divider is
  end component rgb_selector;
  
  signal clock_output: std_logic := '0';
- signal rgb_output: std_logic_vector (2 downto 0):= (others => '0');
+ signal rgb_output: std_logic_vector (2 downto 0):= "100";
  
 begin
 i_clock_divider: clock_divider 

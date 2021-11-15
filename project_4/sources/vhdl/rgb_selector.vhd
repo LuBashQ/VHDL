@@ -48,7 +48,7 @@ architecture Behavioral of rgb_selector is
     -- rgb selector signals
     type selector_colour is (RED, GREEN, BLUE);
     signal colour: selector_colour := RED;
-    signal colour_value_copy: std_logic_vector(2 downto 0) := "000";
+    signal colour_value_copy: std_logic_vector(2 downto 0) := "100";
 
 begin
 
