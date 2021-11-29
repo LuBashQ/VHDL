@@ -41,18 +41,17 @@ component pwm is
     generic (resolution: integer);
     Port ( sysclk: in std_logic;
             n_Reset: in std_logic;
-            pwm_value: integer;
+            pwm_value: std_logic_vector ((resolution-1) downto 0);
             pwm_output: out std_logic 
      );
 end component pwm;
-constant RESOLUTION: integer := 10;
+constant RESOLUTION: integer := 17;
 constant SYSCLK_PERIOD: time := 8ns;
 constant PWM_PERIOD: time := SYSCLK_PERIOD * (2**RESOLUTION);
 signal sysclk: std_logic := '0';
 signal n_Reset: std_logic := '1';
 signal output_s: std_logic := '0';
 signal duty_value: integer:= 0;
-signal sine_s: std_logic := '0';
 
 component clock_divider is
     generic(
@@ -68,17 +67,7 @@ component clock_divider is
 end component clock_divider;
  
 begin
-   sine_clock: clock_divider
-        generic map(
-            input_f => 125.0e6,   --Hz
-            output_f => 125.0e2  -- Hz
-        )
-        port map(
-            sysclk => sysclk,
-            n_Reset => n_Reset,
-            ratio => duty_value,
-            output_s => sine_s
-        );
+   
     i_pwm: pwm
         generic map (
             resolution =>  RESOLUTION 
@@ -86,16 +75,24 @@ begin
         port map(
             sysclk => sysclk,
             n_Reset => n_Reset,
-            pwm_value => duty_value,
+            pwm_value => std_logic_vector (to_unsigned(duty_value, resolution)),
             pwm_output => output_s
         );
     sysclk <= not sysclk after (SYSCLK_PERIOD/2.0);
     
-process(sysclk)
+process
 begin
-    if rising_edge(sysclk) then
-        duty_value <= duty_value - (duty_value ** 3)/6 + (duty_value**5)/120;
-    end if;
+   wait for (PWM_PERIOD*2);
+   duty_value <= 2**(RESOLUTION)/4;
+   wait for (PWM_PERIOD*2);
+   duty_value <= 2**(RESOLUTION)/2;
+   wait for (PWM_PERIOD*2);
+   duty_value <= 2**(RESOLUTION)-1;
+   wait for (PWM_PERIOD*2);
+   duty_value <= 2**(RESOLUTION)*3/4;
+   wait for (PWM_PERIOD*2);
+   duty_value <= 2**(RESOLUTION);
+   wait;
 end process;
 
 end Behavioral;

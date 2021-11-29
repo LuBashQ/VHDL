@@ -36,7 +36,7 @@ entity pwm is
     generic (resolution: integer);
     Port ( sysclk: in std_logic;
          n_Reset: in std_logic;
-         pwm_value: in integer; --std_logic_vector((resolution-1) downto 0);
+         pwm_value: in std_logic_vector((resolution-1) downto 0);
          pwm_output: out std_logic
         );
 end pwm;
@@ -59,12 +59,12 @@ begin
     i_pwm: clock_divider
         generic map(
             input_f => 125.0e6,   --Hz
-            output_f => 125.0e6/(2**resolution)  -- Hz
+            output_f => 125.0e6/(2.0**(resolution))  -- Hz
         )
         port map(
             sysclk => sysclk,
             n_Reset => n_Reset,
-            ratio => pwm_value,
+            ratio => to_integer(unsigned(pwm_value)),
             output_s => pwm_output
         );
     
