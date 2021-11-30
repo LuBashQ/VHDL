@@ -46,7 +46,7 @@ end dimmer;
 
 architecture Behavioral of dimmer is
     constant HALF_DUTY_CYCLE_I: integer := (2** resolution)/2;
-    constant HALF_DUTY_CYCLE_V: std_logic_vector  := std_logic_vector(to_unsigned(HALF_DUTY_CYCLE_I, resolution));
+    --constant HALF_DUTY_CYCLE_V: std_logic_vector  := std_logic_vector(to_unsigned(HALF_DUTY_CYCLE_I, resolution));
     component pwm is
         generic (resolution: integer);
         Port ( sysclk: in std_logic;
@@ -55,35 +55,32 @@ architecture Behavioral of dimmer is
              pwm_output: out std_logic
             );
     end component pwm;
-    signal pwm_value_copy: std_logic_vector((resolution-1) downto 0) := HALF_DUTY_CYCLE_V;
     signal pwm_integer: integer := HALF_DUTY_CYCLE_I; 
     signal pwm_out: std_logic := '0';
 begin
- process(op_clk, n_Reset) is
-    begin
-        if n_Reset ='0' then
-            pwm_value_copy <= HALF_DUTY_CYCLE_V;
-        elsif rising_edge(op_clk) and enable = '1' then
-            if up = '1' and pwm_integer  < 2**resolution - 1 then
-                --pwm_value_copy <= std_logic_vector(to_unsigned(to_integer(unsigned(pwm_value_copy))+1, resolution)); 
-                pwm_integer <= pwm_integer +1;
-            elsif down = '1'and pwm_integer  > 0 then
-                --pwm_value_copy <= std_logic_vector(to_unsigned(to_integer(unsigned(pwm_value_copy))-1, resolution)); 
-                pwm_integer <= pwm_integer -1;
-            end if;
-        end if;
-    end process;
-   
-   pwm_value_copy <= std_logic_vector(to_unsigned(pwm_integer, resolution));
+
    
    i_pwm: pwm 
     generic map (resolution => resolution)
         Port map( sysclk=> sysclk,
              n_Reset=> n_Reset,
-             pwm_value=>pwm_value_copy,
-             pwm_output => output_dimmer 
+             pwm_value=>std_logic_vector(to_unsigned(pwm_integer, resolution)),
+             pwm_output => pwm_out 
             );
     
-  --output_dimmer <= pwm_out when enable ='1' else '0';
+ process(op_clk, n_Reset) is
+    begin
+        if n_Reset ='0' then
+            pwm_integer <= HALF_DUTY_CYCLE_I;
+        elsif rising_edge(op_clk) and enable = '1' then
+            if up = '1' and pwm_integer < 2**resolution - 1 then
+                pwm_integer <= pwm_integer +1;
+            elsif down = '1'and pwm_integer > 0 then
+                pwm_integer <= pwm_integer -1;
+            end if;
+        end if;
+    end process;
+   
+    output_dimmer <= pwm_out when enable = '1' else '0';
 
 end Behavioral;

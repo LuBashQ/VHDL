@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="rgb_dimmer_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="rgb_dimmer_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="105.001000001 ms"></ZoomEndTime>
+      <Cursor1Time time="90.806724000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="89"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/rgb_dimmer_tb/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_dimmer_tb/op_clk" type="logic">
+      <obj_property name="ElementShortName">op_clk</obj_property>
+      <obj_property name="ObjectShortName">op_clk</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_dimmer_tb/n_Reset" type="logic">
+      <obj_property name="ElementShortName">n_Reset</obj_property>
+      <obj_property name="ObjectShortName">n_Reset</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_dimmer_tb/up_cnt" type="logic">
+      <obj_property name="ElementShortName">up_cnt</obj_property>
+      <obj_property name="ObjectShortName">up_cnt</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rgb_dimmer_tb/down_cnt" type="logic">
+      <obj_property name="ElementShortName">down_cnt</obj_property>
+      <obj_property name="ObjectShortName">down_cnt</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="group33" type="group">
+      <obj_property name="label">RGB dimmers</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group21" type="group">
+         <obj_property name="label">RED</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_r/enable" type="logic">
+            <obj_property name="ElementShortName">enable</obj_property>
+            <obj_property name="ObjectShortName">enable</obj_property>
+            <obj_property name="CustomSignalColor">#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_r/output_dimmer" type="logic">
+            <obj_property name="ElementShortName">output_dimmer</obj_property>
+            <obj_property name="ObjectShortName">output_dimmer</obj_property>
+            <obj_property name="CustomSignalColor">#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_r/pwm_integer" type="other">
+            <obj_property name="ElementShortName">pwm_integer</obj_property>
+            <obj_property name="ObjectShortName">pwm_integer</obj_property>
+            <obj_property name="CustomSignalColor">#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group34" type="group">
+         <obj_property name="label">GREEN</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_g/enable" type="logic">
+            <obj_property name="ElementShortName">enable</obj_property>
+            <obj_property name="ObjectShortName">enable</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_g/output_dimmer" type="logic">
+            <obj_property name="ElementShortName">output_dimmer</obj_property>
+            <obj_property name="ObjectShortName">output_dimmer</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_g/pwm_integer" type="other">
+            <obj_property name="ElementShortName">pwm_integer</obj_property>
+            <obj_property name="ObjectShortName">pwm_integer</obj_property>
+            <obj_property name="CustomSignalColor">#00FF00</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group35" type="group">
+         <obj_property name="label">BLUE</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_b/enable" type="logic">
+            <obj_property name="ElementShortName">enable</obj_property>
+            <obj_property name="ObjectShortName">enable</obj_property>
+            <obj_property name="CustomSignalColor">#0000FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_b/output_dimmer" type="logic">
+            <obj_property name="ElementShortName">output_dimmer</obj_property>
+            <obj_property name="ObjectShortName">output_dimmer</obj_property>
+            <obj_property name="CustomSignalColor">#0000FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/rgb_dimmer_tb/i_dimmer/dimmer_b/pwm_integer" type="other">
+            <obj_property name="ElementShortName">pwm_integer</obj_property>
+            <obj_property name="ObjectShortName">pwm_integer</obj_property>
+            <obj_property name="CustomSignalColor">#0000FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group76" type="group">
+      <obj_property name="label">RGB selector</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/rgb_dimmer_tb/i_rgb_selector/selector" type="logic">
+         <obj_property name="ElementShortName">selector</obj_property>
+         <obj_property name="ObjectShortName">selector</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/rgb_dimmer_tb/i_rgb_selector/colour_value" type="array">
+         <obj_property name="ElementShortName">colour_value[2:0]</obj_property>
+         <obj_property name="ObjectShortName">colour_value[2:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/rgb_dimmer_tb/i_rgb_selector/button_pulser_out" type="logic">
+         <obj_property name="ElementShortName">button_pulser_out</obj_property>
+         <obj_property name="ObjectShortName">button_pulser_out</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/rgb_dimmer_tb/i_rgb_selector/colour" type="other">
+         <obj_property name="ElementShortName">colour</obj_property>
+         <obj_property name="ObjectShortName">colour</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
